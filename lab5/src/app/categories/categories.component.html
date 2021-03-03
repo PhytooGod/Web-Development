@@ -1,0 +1,18 @@
+<h2>Categories</h2>
+<div *ngFor="let category of products" class="category">
+  <p (click)="categoryDisplay(category.category_id)" class="category_name">
+    {{category.category_name}}
+  </p>
+  <div *ngIf="category.display">
+    <div *ngFor="let item of category.items" class="product">
+      <app-product-list [product]="item" [category]="category">
+      </app-product-list>
+      <button (click)="likeItem(category.category_id, item.id)">
+        Like
+      </button>
+      <button (click)="removeItem(category.category_id, item.id)">
+        Remove
+      </button>
+    </div>
+  </div>
+</div>
