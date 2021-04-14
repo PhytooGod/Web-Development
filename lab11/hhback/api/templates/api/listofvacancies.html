@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css%22%3E">
+    <title> Main Stranica </title>
+</head>
+<body>
+  <header class="mb-auto">
+  </header>
+  {%for i in companies%}
+    {%for j in i.Vacancy%}
+      <h3>{{ j.name }}</h3>
+      <p>{{ j.description }}</p>
+      <p>{{ j.salary }}</p>
+    {%endfor%}
+  {%endfor%}
+</body>
+</html>
